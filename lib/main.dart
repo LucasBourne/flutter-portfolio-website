@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/education.dart';
+import 'education.dart';
 import 'fadeIn.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Lucas Bourne',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: new MyHomePage(title: 'Lucas Bourne'),
@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Size screenSize;
   final educationKey = new GlobalKey();
 
-  scrollToSection(selectedIndex) {
-    if (selectedIndex == 0) {
+  scrollToSection(String selection) {
+    if (selection == "education") {
       Scrollable.ensureVisible(
         educationKey.currentContext,
         duration: Duration(milliseconds: 400),
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Material(
       child: Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(100),
+            preferredSize: Size.fromHeight(60),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -80,12 +80,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        widget.title,
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontSize: 40,
+                      FadeIn(
+                        2,
+                        Text(
+                          widget.title,
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                            fontSize: 20,
+                          ),
                         ),
+                        "right",
                       ),
                     ],
                   ),
@@ -99,10 +103,70 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialButton(
                         padding: EdgeInsets.only(right: 25, left: 25),
                         child: Text(
-                          "Education",
+                          "Work",
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                          ),
                         ),
                         onPressed: () {
-                          scrollToSection(0);
+                          scrollToSection("work");
+                        },
+                        autofocus: true,
+                        focusColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                      ),
+                      "right",
+                    ),
+                    FadeIn(
+                      2,
+                      MaterialButton(
+                        padding: EdgeInsets.only(right: 25, left: 25),
+                        child: Text(
+                          "Education",
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                          ),
+                        ),
+                        onPressed: () {
+                          scrollToSection("education");
+                        },
+                        autofocus: true,
+                        focusColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                      ),
+                      "right",
+                    ),
+                    FadeIn(
+                      2,
+                      MaterialButton(
+                        padding: EdgeInsets.only(right: 25, left: 25),
+                        child: Text(
+                          "Projects",
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                          ),
+                        ),
+                        onPressed: () {
+                          scrollToSection("education");
+                        },
+                        autofocus: true,
+                        focusColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                      ),
+                      "right",
+                    ),
+                    FadeIn(
+                      2,
+                      MaterialButton(
+                        padding: EdgeInsets.only(right: 25, left: 25),
+                        child: Text(
+                          "Contact",
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                          ),
+                        ),
+                        onPressed: () {
+                          scrollToSection("contact");
                         },
                         autofocus: true,
                         focusColor: Colors.transparent,
