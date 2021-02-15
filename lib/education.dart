@@ -14,11 +14,12 @@ class EducationSectionState extends State<EducationSection> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
-        key: widget.educationKey,
-        color: Colors.black,
-        height: 300,
-        width: 300,
+      child: ExpansionTile(
+        title: Text("Education"),
+        children: <Widget>[
+          Text("Line one here"),
+          Text("Line two here"),
+        ],
       ),
     );
   }
