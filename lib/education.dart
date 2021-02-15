@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-//import 'FadeIn.dart';
 class EducationSection extends StatefulWidget {
   static const String routeName = "/projects";
   final Key educationKey;

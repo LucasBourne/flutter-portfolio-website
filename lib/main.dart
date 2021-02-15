@@ -13,7 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -47,15 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         curve: Curves.easeInOut,
       );
     }
-    /*
-    else if (_selectedIndex == 1) 
-    {
-      Scrollable.ensureVisible(projectKey.currentContext,
-          alignment: 0.0,
-          duration: Duration(milliseconds: 400),
-          curve: Curves.easeInOut);
-    } 
-    */
+    // repeat for other sections as necessary
     else {
       Scrollable.ensureVisible(
         educationKey.currentContext,
@@ -186,7 +177,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Container(
-                    // Need to set width & height of container to image dimensions
                     child: Image.network(
                         "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1307&q=80"),
                   ),
